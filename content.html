@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>content</title>
+    <style>
+       <style>
+
+        Body {  
+  font-family: Calibri, Helvetica, sans-serif;  
+  background-color: white;  
+}  
+        form {
+            margin: 50px;
+        }
+
+        table {
+            border-radius: 15px;
+        }
+
+        a{
+  width: 100%;
+  color: black;   
+        margin: 8px 0;  
+        padding: 12px 20px;   
+        display: inline-block;   
+           
+        box-sizing: border-box; 
+}
+
+        input[type=text] {
+            width: 35vw;
+            height: 6vh;
+            border-radius: 5px;
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+
+        input[type=password] {
+            width: 35vw;
+            height: 6vh;
+            border-radius: 5px;
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+        input[type=email] {
+            width: 35vw;
+            height: 6vh;
+            border-radius: 5px;
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+
+        button[type=submit] {
+            width: 35vw;
+            height: 6vh;
+            background-color: royalblue;
+            font-size: 20px;
+            color: white;
+            border-radius: 5px;
+        }
+
+        tr {
+            text-align: center;
+            font-size: 30px;
+        }
+    </style>
+
+    
+
+
+<h1>Notes</h1>
+<table border="1px" cellspacing="10">
+	<tr>
+		<th>topic</th>
+		<th>content</th>
+                <th>action</th>
+		
+	</tr>
+	{% for tup in elist %}
+		<tr>
+			<td>{{tup[0]}}</td>
+			<td>{{tup[1]}}</td>
+			
+			<td>
+				<a href="editInfo?topic={{tup[0]}}">Edit</a>
+				<a href="deleteInfo?topic={{tup[0]}}">Delete</a>
+			</td>
+		</tr>
+	{% endfor %}
+</table>
+<h2><a href="/create">Create new note</a></h2>
+<h2><a href="/">Log out</a></h2> 
